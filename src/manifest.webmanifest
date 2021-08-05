@@ -1,6 +1,6 @@
 {
-  "name": "battery-stats-pwa",
-  "short_name": "battery-stats-pwa",
+  "name": "Garden Battery",
+  "short_name": "Garden Battery",
   "theme_color": "#1976d2",
   "background_color": "#fafafa",
   "display": "standalone",

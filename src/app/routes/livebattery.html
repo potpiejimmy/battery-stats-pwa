@@ -8,7 +8,7 @@
         <div *ngIf="stats && stats.watts < 0" style="text-align: center;">
             <img height="76px" src="/assets/sun.gif"/>
         </div>
-        <div class="label" [style.color]="wattcolor">{{(stats ? ((stats.watts >= 0 ? '' + stats.watts : '+ ' + (-stats.watts)) + ' Watt') : '...')}}</div>
+        <div class="label" [style.color]="wattcolor">{{(stats ? ((stats.watts >= 0 ? stats.watts : -stats.watts) + ' Watt') : '...')}}</div>
     </div>
 
     <div fxLayout="column">

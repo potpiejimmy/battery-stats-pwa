@@ -1,21 +1,34 @@
 <div class="height100" fxLayout="column" fxLayoutAlign="center center">
 
     <div class="autoFill" fxLayout="column" fxLayoutAlign="end center">
-        <animarrow></animarrow>
-        <div class="label">{{(stats ? stats.watts + ' Watt' : '...')}}</div>
+        <div *ngIf="stats && stats.watts > 0">
+            <animarrow></animarrow>
+        </div>
+        <div *ngIf="!stats || !stats.watts" style="height: 80px;"></div>
+        <div *ngIf="stats && stats.watts < 0" style="text-align: center;">
+            <img height="76px" src="/assets/sun.gif"/>
+        </div>
+        <div class="label" [style.color]="wattcolor">{{(stats ? ((stats.watts >= 0 ? '' + stats.watts : '+ ' + (-stats.watts)) + ' Watt') : '...')}}</div>
     </div>
 
-    <div class="battery">
-        <div class="stackParent height100">
-            <div class="stackChild">
-                <div class="height100" fxLayout="column" fxLayoutAlign="end">
-                    <div class="filling" [style.height.%]="stats && stats.soc"></div>
+    <div fxLayout="column">
+        <div fxLayout="row" style="margin: 0 8vw;">
+            <div class="knob"></div>
+            <div class="autoFill"></div>
+            <div class="knob"></div>
+        </div>
+        <div class="battery">
+            <div class="stackParent height100">
+                <div class="stackChild">
+                    <div class="height100" fxLayout="column" fxLayoutAlign="end">
+                        <div class="filling" [style.height.%]="stats && stats.soc"></div>
+                    </div>
                 </div>
-            </div>
-            <div class="stackChild">
-                <div class="height100" fxLayout="column" fxLayoutAlign="center center">
-                    <div class="label">
-                        {{stats && (stats.soc + ' %')}}
+                <div class="stackChild">
+                    <div class="height100" fxLayout="column" fxLayoutAlign="center center">
+                        <div class="label">
+                            {{stats && (stats.soc + ' %')}}
+                        </div>
                     </div>
                 </div>
             </div>

@@ -18,6 +18,11 @@ export class LiveBatteryComponent implements AfterViewInit {
     async refresh() {
         this.stats = await this.api.getBatteryStats();
 
-        setTimeout(() => this.refresh(), 3000);
+        setTimeout(() => this.refresh(), 5000);
+    }
+
+    get wattcolor() {
+        if (!this.stats || !this.stats.watts) return 'black';
+        return this.stats.watts > 0 ? 'red' : 'green';
     }
 }

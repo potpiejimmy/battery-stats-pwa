@@ -1,7 +1,7 @@
 .battery {
     width: 80vw;
     height: 40vw;
-    border: 2vw solid black;
+    border: 1.5vw solid black;
     border-radius: 1vw;
     padding: 2vw;
 
@@ -23,6 +23,12 @@
     .label {
         font-size: 8vw;
     }
+}
+
+.knob {
+    background-color: black;
+    height: 2vw;
+    width: 8vw;
 }
 
 .label {

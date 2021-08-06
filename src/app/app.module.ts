@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule  } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -9,16 +10,20 @@ import { environment } from '../environments/environment';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { LiveBatteryComponent } from './routes/livebattery';
 import { HistoryComponent } from './routes/history';
+import { BatteryAPI } from './services/batteryapi.service';
+import { AnimatedArrowComponent } from './components/animarrow';
 
 @NgModule({
   declarations: [
     AppComponent,
     LiveBatteryComponent,
-    HistoryComponent
+    HistoryComponent,
+    AnimatedArrowComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
     FlexLayoutModule,
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: environment.production,
@@ -27,7 +32,9 @@ import { HistoryComponent } from './routes/history';
       registrationStrategy: 'registerWhenStable:30000'
     })
   ],
-  providers: [],
+  providers: [
+    BatteryAPI
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -12,6 +12,11 @@ import { LiveBatteryComponent } from './routes/livebattery';
 import { HistoryComponent } from './routes/history';
 import { BatteryAPI } from './services/batteryapi.service';
 import { AnimatedArrowComponent } from './components/animarrow';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FormsModule } from '@angular/forms';
+
+// Material
+import { MatSliderModule } from '@angular/material/slider';
 
 @NgModule({
   declarations: [
@@ -30,7 +35,11 @@ import { AnimatedArrowComponent } from './components/animarrow';
       // Register the ServiceWorker as soon as the app is stable
       // or after 30 seconds (whichever comes first).
       registrationStrategy: 'registerWhenStable:30000'
-    })
+    }),
+    BrowserAnimationsModule,
+    FormsModule,
+    // Material
+    MatSliderModule
   ],
   providers: [
     BatteryAPI

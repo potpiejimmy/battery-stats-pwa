@@ -1,7 +1,12 @@
+<div style="margin: 1.25em 1em 0 1em" fxLayout="row" fxLayoutGap="1em" fxLayoutAlign="start center">
+    <div>Hours:</div>
+    <mat-slider class="width100" thumbLabel min="4" max="168" step="4" [(ngModel)]="hours"></mat-slider>
+</div>
+
 <div class="margin1vw height100" fxLayout="column" fxLayoutGap="1vw" fxLayoutAlign="start center">
 
-    <iframe width="100%" height="45%" style="border: 1px solid #cccccc;" src="https://thingspeak.com/channels/1465860/charts/1?bgcolor=%23ffffff&color=%232020d6&dynamic=true&results=240&title=State+of+Charge+%5B%25%5D&type=line&yaxis=SoC&width=auto&height=auto"></iframe>
+    <iframe width="100%" height="42%" style="border: 1px solid #cccccc;" [src]="url1"></iframe>
 
-    <iframe width="100%" height="45%" style="border: 1px solid #cccccc;" src="https://thingspeak.com/channels/1465877/charts/1?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=240&title=P+%5BW%5D&type=line&yaxis=Watt&width=auto&height=auto"></iframe>
+    <iframe width="100%" height="42%" style="border: 1px solid #cccccc;" [src]="url2"></iframe>
 
 </div>

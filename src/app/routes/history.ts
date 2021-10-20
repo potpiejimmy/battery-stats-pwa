@@ -23,10 +23,10 @@ export class HistoryComponent {
     }
 
     createSafeUrl1() {
-        return this.sanitizer.bypassSecurityTrustResourceUrl("https://thingspeak.com/channels/1465860/charts/1?bgcolor=%23ffffff&color=%232020d6&dynamic=true&results="+(this._hours*60)+"&title=State+of+Charge+%5B%25%5D&type=line&yaxis=SoC&width=auto&height=auto");
+        return this.sanitizer.bypassSecurityTrustResourceUrl("https://thingspeak.com/channels/1465860/charts/1?bgcolor=%23ffffff&color=%232020d6&dynamic=true&results="+(this._hours*20)+"&title=State+of+Charge+%5B%25%5D&type=line&yaxis=SoC&width=auto&height=auto");
     }
 
     createSafeUrl2() {
-        return this.sanitizer.bypassSecurityTrustResourceUrl("https://thingspeak.com/channels/1465877/charts/1?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results="+(this._hours*60)+"&title=P+%5BW%5D&type=line&yaxis=Watt&width=auto&height=auto");
+        return this.sanitizer.bypassSecurityTrustResourceUrl("https://thingspeak.com/channels/1465877/charts/1?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results="+(this._hours*20)+"&title=P+%5BW%5D&type=line&yaxis=Watt&width=auto&height=auto");
     }
 }
